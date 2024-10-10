@@ -4,24 +4,32 @@
 ![Static Badge](https://img.shields.io/badge/license-MIT-blue)
 
 # :writing_hand: Descrição do Projeto
-Projeto foi o primeiro Challenge da fase 2 da Alura One Oracle Next Education. O foco aqui era utilizar Java para fazer requisições a uma API de taxas de câmbio, a manipular dados JSON e, por fim, a filtrar e exibir as moedas de interesse.
+Este projeto foi desenvolvido como parte do primeiro desafio da Fase 2 do programa Alura One Oracle Next Education. O objetivo é construir um Conversor de Moedas que permite aos usuários realizar conversões dinâmicas e em tempo real entre diferentes moedas, diretamente pelo console. A aplicação utiliza a linguagem Java para fazer requisições a uma API de taxas de câmbio, manipula dados JSON e oferece uma interface de usuário textual.
 
-O objetivo era desenvolver um Conversor de Moedas que ofereça interação textual (via console) com os usuários, proporcionando no mínimo 6 opções distintas de conversões de moedas em um menu. A taxa de conversão não será estática, mas sim dinamicamente obtida por meio de uma API, garantindo dados precisos e em tempo real para uma experiência mais atualizada e eficaz.
+## API Utilizada:
 
-Extras:
+Para obter as taxas de câmbio, o projeto utiliza a API <a href="https://www.exchangerate-api.com/">Exchangerate-API</a>. Essa API permite realizar requisições HTTP para buscar as cotações mais atualizadas entre pares de moedas. A Exchangerate-API é uma plataforma confiável que oferece dados rápidos e precisos para conversões de moeda, ideal para aplicações que exigem atualizações em tempo real.
 
-- Histórico de Conversões: Adicione a capacidade de rastrear e exibir o histórico das últimas conversões realizadas, oferecendo aos usuários uma visão completa de suas atividades.
+Ao realizar uma conversão, o aplicativo faz uma requisição à API com os códigos das moedas de origem e destino, e o valor a ser convertido. A resposta JSON da API contém a taxa de conversão atualizada, que é utilizada para calcular o valor convertido. Esse processo garante que as taxas de câmbio sejam sempre precisas, proporcionando uma experiência de conversão confiável e atualizada para o usuário.
 
-- Suporte para Mais Moedas: Expanda a lista de moedas disponíveis para escolha, permitindo que os usuários convertam entre uma variedade ainda maior de opções monetárias.
+## Objetivos e Funcionalidades Principais
 
-- Registros de Logs: Utilize as funções da biblioteca java.time para criar registros que registrem as conversões realizadas, incluindo informações sobre quais moedas foram convertidas e em que momento.
+O Conversor de Moedas oferece ao usuário um menu de opções para conversão de moedas, com um mínimo de seis pares de moedas diferentes. A aplicação realiza as conversões de maneira dinâmica, utilizando taxas de câmbio atualizadas em tempo real obtidas via API, garantindo precisão e confiabilidade nos resultados.
 
-# :hammer: Funcionalidades do projeto
+## Funcionalidades Extras
 
-- `Conversão de Moedas em tempo real utilizando API`
-- `Histórico de Conversões mostrado ao sair do programa`
-- `Registro de Logs também é mostrado juntamente com o histórico ao quitar o programa`
-- `Suporte para Mais Duas Moedas -> EUR - CNY`
+    - `Histórico de Conversões`: O aplicativo armazena e exibe o histórico das conversões realizadas durante a sessão, proporcionando uma visão completa das atividades do usuário. Isso permite ao usuário revisar suas conversões a qualquer momento antes de encerrar o programa.
+    - `Suporte Ampliado para Moedas`: Além das conversões comuns, a aplicação oferece suporte adicional para conversões entre Euro (EUR) e Yuan Chinês (CNY), expandindo as opções disponíveis e aumentando a flexibilidade.
+    - `Registros de Logs`: Utilizando a biblioteca java.time, o aplicativo registra a data e a hora de cada conversão realizada, permitindo que o usuário saiba exatamente quando cada operação ocorreu. Esses logs são exibidos juntamente com o histórico no momento de encerramento do programa.
+
+# :hammer: Funcionalidades do Projeto
+    - Conversão de Moedas em Tempo Real com API: As conversões são realizadas usando dados atualizados da Exchangerate-API, oferecendo taxas de câmbio precisas.
+
+    - Histórico de Conversões: Exibe um histórico detalhado das transações ao final da sessão, incluindo informações como o valor original, moeda de origem, moeda de destino e valor convertido.
+
+    - Registro de Logs de Conversões: Cada transação é registrada com a data e hora, fornecendo uma visão completa de quando as operações foram realizadas. Esse log é exibido junto com o histórico ao encerrar o programa.
+
+    - Suporte para Moedas Adicionais: Conversões adicionais foram incluídas entre Euro (EUR) e Yuan Chinês (CNY), permitindo uma gama mais ampla de opções para o usuário.
 
 # :open_file_folder: Acesso ao projeto 
 Para executar o projeto localmente, siga os passos abaixo:
