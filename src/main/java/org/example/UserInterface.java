@@ -1,9 +1,13 @@
 package org.example;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
     private final Scanner scanner = new Scanner(System.in);
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
     public void exibirMenu() {
         System.out.println("Seja Bem-Vindo ao Conversor de Moedas =)");
@@ -45,6 +49,34 @@ public class UserInterface {
     public void mostrarResultado(String valor, String moedaOrigem, double resultado, String moedaDestino) {
         System.out.println("Valor " + valor + " [" + moedaOrigem + "] corresponde ao valor final de =>>> "
                 + resultado + " [" + moedaDestino + "]");
+        imprimirSeparador();
+    }
+
+    public String criarRegistro(String conversao, String valor, String moedaOrigem, String moedaDestino, double resultado) {
+        LocalDateTime agora = LocalDateTime.now();
+        String timestamp = formatter.format(agora);
+        return String.format("[%s] %s => %s %s => %s %s", timestamp, valor, moedaOrigem, resultado, moedaDestino, obterNomeConversao(conversao));
+    }
+
+    private String obterNomeConversao(String conversao) {
+        return switch (conversao) {
+            case "1" -> "Dólar para Peso Argentino";
+            case "2" -> "Peso Argentino para Dólar";
+            case "3" -> "Dólar para Real Brasileiro";
+            case "4" -> "Real Brasileiro para Dólar";
+            case "5" -> "Dólar para Peso Colombiano";
+            case "6" -> "Peso Colombiano para Dólar";
+            case "7" -> "Euro para Yuan Chinês";
+            case "8" -> "Yuan Chinês para Euro";
+            default -> "Conversão desconhecida";
+        };
+    }
+
+    public void mostrarHistorico(List<String> historico) {
+        System.out.println("\nHistórico de Conversões:");
+        for (String log : historico) {
+            System.out.println(log);
+        }
         imprimirSeparador();
     }
 
